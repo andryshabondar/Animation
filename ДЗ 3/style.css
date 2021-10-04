@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    background: url(./images/space.jpg);
+    background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    
+}
+
+.conteiner1{
+    background: url(./images/earth1.png) no-repeat;
+    background-size: 100%;
+    width: 200px;
+    height: 100px;
+    position: relative;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    top: 210px;
+    z-index: 3;
+}
+
+.conteiner2{
+    background: url(./images/earth2.png) no-repeat;
+    background-size: 100%;
+    width: 200px;
+    height: 100px;
+    position: relative;
+    top: 210px;
+    z-index: 1;
+}
+
+.circle{
+    z-index: 2;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid grey;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: rotateX(70deg);
+            transform: rotateX(70deg);
+}
+
+.moon{
+    background: url(./images/moon.png) no-repeat;
+    background-size: 100%;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-animation: run linear infinite;
+            animation: run linear infinite;
+    -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: rotateZ(0deg) translate(148px);
+        -ms-transform: rotate(0deg) translate(148px);
+            transform: rotateZ(0deg) translate(148px);
+}
+
+.circle::before{
+    -webkit-transform: rotate(180deg) translate(148px);
+        -ms-transform: rotate(180deg) translate(148px);
+            transform: rotate(180deg) translate(148px);
+    z-index: 5;
+}
+
+
+@-webkit-keyframes run{
+    
+    100%{
+        -webkit-transform: rotateZ(360deg) translate(148px);
+                transform: rotateZ(360deg) translate(148px);
+    }
+}
+
+
+@keyframes run{
+    
+    100%{
+        -webkit-transform: rotateZ(360deg) translate(148px);
+                transform: rotateZ(360deg) translate(148px);
+    }
+}
